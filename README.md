@@ -30,7 +30,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This API was created to function as the main backend function for a recipe recollection app [(can find here)](https://github.com/valeria-gonzalez/recipeApp), it's main purpose is to execute a webscraper when the endpoint "/recipe" is called, which extracts the content of recipes from a [website](https://www.bowlofdelicious.com/) and returns a list of those that coincide with a user's ingredients that are obtained from firestore. 
+This API was created to function as the main backend function for a recipe recollection app [(can find here)](https://github.com/valeria-gonzalez/CookmateRecipeApp), it's main purpose is to execute a webscraper when the endpoint "/recipe" is called, which extracts the content of recipes from a [website](https://www.bowlofdelicious.com/) and returns a list of those that coincide with a user's ingredients that are obtained from firestore. 
 
 ### Built With
 
