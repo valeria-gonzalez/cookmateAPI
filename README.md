@@ -81,7 +81,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-shield]: https://img.shields.io/github/issues/valeria-gonzalez/cookmateAPI.svg?style=for-the-badge
 [issues-url]: https://github.com/valeria-gonzalez/cookmateAPI/issues
 [license-shield]: https://img.shields.io/github/license/valeria-gonzalez/cookmateAPI.svg?style=for-the-badge
-[license-url]: https://github.com/valeria-gonzalez/cookmateAPI/blob/master/LICENSE
+[license-url]: https://github.com/valeria-gonzalez/cookmateAPI/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/valeria-gonzalez-segura
 [Python]: https://img.shields.io/badge/Python-blue?style=for-the-badge&logo=python&logoColor=white
