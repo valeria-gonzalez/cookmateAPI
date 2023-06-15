@@ -36,7 +36,7 @@ This API was created to function as the main backend function for a recipe recol
 
 [![Python][Python]][Python-url] [![Flask][Flask]][Flask-url] [![Firestore][Firestore]][Firestore-url] 
 
-### Feautures
+### Features
 - Retrieve and list the ingredients a user has stored in a Firestore collection. This feature allows to filter recipes that coincide with those ingredients.
 - Perform web scraping to collect recipes from various sources, based off a category and user ingredients.
 - Extract detailed content from specific recipe links, such as title, category, ingredients and instructions.
