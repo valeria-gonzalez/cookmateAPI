@@ -26,9 +26,12 @@ class BowlsRecipeScraper():
     # connect to website using selenium and web driver
     def connect(self, url):
         """
-        create chrome driver
-        :param url: url to connect: str
-        :return: chrome driver: obj
+        Create Chrome Driver
+
+        Args:
+            url (str): url to connect to
+        Return:
+            chrome driver (selenium obj)
         """
         options = Options()
         options.add_argument('headless')
@@ -44,12 +47,15 @@ class BowlsRecipeScraper():
 
         return driver
 
-    # get all recipe links from one page
+    # get all recipe links from one page using selenium
     def get_links_from_one_page(self, my_webpage):
         """
-        To collect links for each recipe from one page
-        :param my_webpage: link to page for scrapping: selenium obj
-        :return: links from one page: list[str]
+        Collect links for each recipe from one page
+
+        Args:
+            my_webpage (selenium obj): page for scrapping
+        Return:
+            list[str]: links from one page
         """
         recipe_links = []
         #on bowlofdelicious.com there are 24 links per page
@@ -61,13 +67,15 @@ class BowlsRecipeScraper():
             recipe_links.append(recipe.get_attribute('href'))
         return recipe_links
 
-    # get all recipe links from all pages on the website
+    # get all recipe links from all pages on the website using selenium
     def get_links_from_site(self, recipe_driver, num_pages):
         """
-        To list pages on website and collect links into list
-        :param recipe_driver: obj  chrome driver
-        :param num_pages: int number of pages to scrap / default 0
-        :return: list of links: list[str]
+        List pages on website and collect links into list
+
+        Args:
+            recipe_driver (chrome driver): page for scrapping
+        Return:
+            list[str]: links from the entire site
         """
         all_pages_links = []
         for i in range(1, num_pages):
@@ -85,7 +93,16 @@ class BowlsRecipeScraper():
 
         return all_pages_links
     
+    # get all recipe links from all pages on the website using beautiful soup
     def get_links_one_page_bs(self, category):
+        """
+        Collect links for each recipe from one page of bowl of delicious
+
+        Args:
+            category (str): category of recipes
+        Return:
+            list[str]: links from one page
+        """
         link = f'https://www.bowlofdelicious.com/category/{category}/'
         req = requests.get(link)
         html = BeautifulSoup(req.content, 'html.parser')
@@ -99,6 +116,7 @@ class BowlsRecipeScraper():
             recipe_links.append(recipe)
         return recipe_links
 
+    # get all recipe links from one page on the website using selenium
     def get_links_one_page_category(self, category):
         """
         Get recipe links from one page of bowl of delicious website
@@ -119,7 +137,7 @@ class BowlsRecipeScraper():
 
         return links
 
-    # get all links based on a category
+    # get all links based on a category using selenium
     def get_links_site_by_category(self, category):
         """
         Get recipe links from bowl of delicious website based on category
@@ -150,7 +168,7 @@ class BowlsRecipeScraper():
 
         return links
 
-    # scrap recipe summary from a specific recipe link
+    # scrap recipe summary from a specific recipe link using beautiful soup
     def get_recipe_summary(self, link):
         """
         Get recipe summary from bowl of delicious link
@@ -171,7 +189,7 @@ class BowlsRecipeScraper():
         ingredients = scraper.ingredients()
         return ingredients
 
-    # to get all data from a recipe based on specific recipe link
+    # to get all data from a recipe based on specific recipe link using recipe_scrapers
     def get_recipe(self, link, category):
         """
         Get recipe data from a link
