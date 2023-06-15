@@ -30,15 +30,31 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This API was created to function as the main backend function for a recipe recollection app [(can find here)](https://github.com/valeria-gonzalez/recipeApp), it contains 
+This API was created to function as the main backend function for a recipe recollection app [(can find here)](https://github.com/valeria-gonzalez/recipeApp), it's main purpose is to execute a webscraper when the endpoint "/recipe" is called, which extracts the content of recipes from a [website](https://www.bowlofdelicious.com/) and returns a list of those that coincide with a user's ingredients that are obtained from firestore. 
 
 ### Built With
 
 [![Python][Python]][Python-url] [![Flask][Flask]][Flask-url] [![Firestore][Firestore]][Firestore-url] 
 
 ### Feautures
-
+- Retrieve and list the ingredients a user has stored in a Firestore collection. This feature allows to filter recipes that coincide with those ingredients.
+- Perform web scraping to collect recipes from various sources, based off a category and user ingredients.
+- Extract detailed content from specific recipe links, such as title, category, ingredients and instructions.
+- Scrape web pages to identify and retrieve links to various recipes. This functionality assists users in discovering new recipes from specific sources or websites.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Usage
+__Can try out at: [cookmate-api-production.up.railway.app](cookmate-api-production.up.railway.app)__ <br>
+1. Feel free to clone this repository with: ```git clone https://github.com/valeria-gonzalez/cookmateAPI```
+2. Install Python requirements: ``` pip install -r requirements.txt```
+3. Start the server for development: ``` python main.py ```
+
+```
+/list     [GET]    Given a recipeID, returns recipe information, if no parameters are given, returns all recipes in firestore.
+/recipes  [GET]    Given a userID and a category, returns recipes that have those ingredients.
+/ingreds  [GET]    Given a userID, returns user's ingredients in firestore.
+/links    [GET]    Given a category, return a list of links of recipes of a certain category from a website.
+```
 
 <!-- LICENSE -->
 ## License
@@ -50,9 +66,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 * [bowlofdelicious.com](https://www.bowlofdelicious.com/)
-* [icons8.com](https://icons8.com/illustrations)
-* [Nutritionix API](https://www.nutritionix.com/)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
